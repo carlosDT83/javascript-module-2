@@ -11,3 +11,9 @@ const studentGrades = {
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  let studentsMoreThan18 = studentGrades.filter(() => {
+        return Object.keys(studentGrades)
+  })
+
+  console.log(studentsMoreThan18);

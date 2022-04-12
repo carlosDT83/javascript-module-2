@@ -15,7 +15,19 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
-}
+  arrayOfPeople.forEach((person) => {
+
+  let h1 = document.createElement("h1")
+  h1.innerText = person.name
+  content.appendChild(h1)
+
+  let h2 = document.createElement("h2")
+  h2.innerText = person.job
+  content.appendChild(h2)
+  }
+  )}
+
+console.log(content);
 
 /**
  *
@@ -25,6 +37,17 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
+  let content1 = document.querySelector("#content")
+  let ul = document.createElement("ul")
+  
+  content1.appendChild(ul)
+  for(i = 0; i < shopping.length; i++) {
+    
+    let li = document.createElement("li");
+    ul.appendChild(li) 
+    li.innerText = [i]
+  }
+  
   //Write your code in here
 }
 
@@ -58,6 +81,30 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
+  let paragraph = document.querySelector("#content")
+  let ul = document.createElement("ul")
+  paragraph.appendChild(ul)
+  books.forEach((book) => {
+    
+    let li = document.createElement("li")
+    let p = document.createElement("p")
+    let br = document.createElement("br")
+    //let texto = document.innerHTML()
+
+    ul.appendChild(li)
+    li.appendChild(p)
+
+    p.innerHTML = "<ul><li>"+book.title+"</li><li>"+book.author+"</li><li>"+book.alreadyRead+"</li></ul>"
+    
+    function already () {
+      
+      if (book.alreadyRead == true) {
+        document.p.style.backgroundColor = green
+      } else {
+        document.p.style.backgroundColor = red
+      }
+    }
+  })
   //Write your code in here
 }
 
