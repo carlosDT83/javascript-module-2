@@ -13,13 +13,13 @@ let laptop = {
   };
 
 let myLaptop = {
-  brand: HP,
+  brand: 'HP',
   screenSize: 15.6,
   isTouchscreen: false,
   isSSD: true,
-  sizeOnDisk: 500/GB,
-  sizeInRAM: 16/GB,
-  brandCPU: intel, 
-  cPU: i7,
-  colour: silver,
+  sizeOnDisk: '500 GB',
+  sizeInRAM: '16 GB',
+  brandCPU: 'intel', 
+  cPU: 'i7',
+  colour: 'silver',
 }

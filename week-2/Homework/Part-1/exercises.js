@@ -96,14 +96,14 @@ function exerciseThree(books) {
 
     p.innerHTML = "<ul><li>"+book.title+"</li><li>"+book.author+"</li><li>"+book.alreadyRead+"</li></ul>"
     
-    function already () {
+    /*function already () {
       
       if (book.alreadyRead == true) {
         document.p.style.backgroundColor = green
       } else {
         document.p.style.backgroundColor = red
       }
-    }
+    }*/
   })
   //Write your code in here
 }

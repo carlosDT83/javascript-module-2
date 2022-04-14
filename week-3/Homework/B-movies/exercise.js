@@ -59,9 +59,29 @@ var movies = [
 ];
 
 // create showMovies function
+setTimeout(function showMovies(movie) {
+  const infoMovie = document.querySelector("#all-movies")
+  movies.forEach((element) => {
+    const paragraph = document.createElement("p")
+    infoMovie.appendChild(paragraph)
+    paragraph.innerHTML = element.title + "<br>" + element.director
+  })
+}, 1000)
+  
+const numberOfElements = document.querySelector("#movies-number")
+numberOfElements.innerText = movies.length
 
+//showMovies(movies)
 
 // create a new movie object for your favorite movie
-
+var myFavoriteMovie = {
+  title: "Cloud Atlas",
+  director: "Tom Tykwer, Lilly Wachowski, Lana Wachowski",
+  type: "Drama, Science fiction",
+  haveWatched: true, 
+}
 
 // create addMovies function
+function addNewMovie () {
+  setTimeout(movies.push(myFavoriteMovie)), 2000}
+//console.log()
