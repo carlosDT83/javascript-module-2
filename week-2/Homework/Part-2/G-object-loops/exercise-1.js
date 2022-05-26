@@ -11,9 +11,12 @@ const studentGrades = {
   // Prints
   // TOM - 20
   // ABDUL - 19
+  
+  for (const studentName in studentGrades) {
+        if (studentGrades[studentName] > 18) {
+              console.log(`${studentName.toUpperCase()} - ${studentGrades[studentName]}`);
 
-  let studentsMoreThan18 = studentGrades.filter(() => {
-        return Object.keys(studentGrades)
-  })
+        }
+  }
 
-  console.log(studentsMoreThan18);
+  

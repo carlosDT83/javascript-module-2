@@ -45,7 +45,7 @@ function exerciseTwo(shopping) {
     
     let li = document.createElement("li");
     ul.appendChild(li) 
-    li.innerText = [i]
+    li.innerText = shopping[i]
   }
   
   //Write your code in here
@@ -93,18 +93,12 @@ function exerciseThree(books) {
 
     ul.appendChild(li)
     li.appendChild(p)
-
-    p.innerHTML = "<ul><li>"+book.title+"</li><li>"+book.author+"</li><li>"+book.alreadyRead+"</li></ul>"
     
-    /*function already () {
-      
-      if (book.alreadyRead == true) {
-        document.p.style.backgroundColor = green
-      } else {
-        document.p.style.backgroundColor = red
-      }
-    }*/
+    p.id = "element-book"
+    p.innerHTML = '<img></img><ul><li>'+book.title+'</li><li>'+book.author+'</li><li>'+book.alreadyRead+'</li></ul>'
   })
+
+  let bkgP = document.querySelectorAll('#element-book')
   //Write your code in here
 }
 

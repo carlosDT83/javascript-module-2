@@ -40,22 +40,16 @@ WRITE YOUR CODE BELOW
 */
 
 
-let destinationNamesWithin500Kms = travelDestinations.filter(function in500Kms(destination){
-    destination.distanceKms <= 500;
-    return destinationNamesWithin500Kms.forEach(destination.destinationName)
-})
-console.log(destinationNamesWithin500Kms);// Complete here
+let destinationNamesWithin500Kms = travelDestinations.filter(distance => distance.distanceKms <= 500).map(city => city.destinationName);// Complete here
 
-//let destinationNameReachableByFerry = travelDestinations.filter(function inFerry(destination){
-//    return destination.transportations = ferry
-//}// Complete here
+let destinationNameReachableByFerry = travelDestinations.filter(ferry => ferry.transportations.includes('ferry')).map(city => city.destinationName);// Complete here
 
-//let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter((train) => train.distanceKms > 300 && train.transportations.includes('train')).map(city => city.destinationName)// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
-//console.log(`Question 1) Expected result: Edinburgh,Dublin, actual result: ${destinationNamesWithin500Kms}`);
-/*console.log(`Question 2) Expected result: Dublin, actual result: ${destinationNameReachableByFerry}`);
-console.log(`Question 3) Expected result: London,Paris, actual result:  ${destinationNamesMoreThan300KmsAwayByTrain}`);*/
+console.log(`Question 1) Expected result: Edinburgh,Dublin, actual result: ${destinationNamesWithin500Kms}`);
+console.log(`Question 2) Expected result: Dublin, actual result: ${destinationNameReachableByFerry}`);
+console.log(`Question 3) Expected result: London,Paris, actual result:  ${destinationNamesMoreThan300KmsAwayByTrain}`);

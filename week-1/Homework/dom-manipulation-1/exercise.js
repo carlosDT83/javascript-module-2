@@ -19,7 +19,7 @@ Write JavaScript below that logs:
 const listOfNodes = document.querySelectorAll('p')
 const firstDiv = document.querySelector('div')
 const idJumbo = document.querySelector('#jumbotron-text')
-const pElements = document.querySelectorAll('p.primary-content')    //El unico elemento .primary-content esta en un div (53,17: <div class="primary-content col-lg-8">), por lo tanto arroja una lista vacia.
+const pElements = document.querySelectorAll('.primary-content p')    
 
 /*
 Task 2
@@ -28,7 +28,8 @@ Task 2
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
 function btnAlert() {
-    alert("Thanks for visiting Bikes for Refugees");
+    document.querySelector('#alertBtn')
+        alert("Thanks for visiting Bikes for Refugees");
 }
 
 /*
@@ -50,11 +51,18 @@ Task 4
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
 */
 let newParagraph = document.querySelector('a#addTextBtn')
-newParagraph.addEventListener('click', moreInfo)
+newParagraph.addEventListener('click', () => {
+    addText = document.createElement('p')
+    addText.innerText = 'This new text is added when you click the button...'
+    document.querySelector('div#mainArticles').appendChild(addText)
+})
 
-function moreInfo () {
-    document.querySelector('div#mainArticles').innerHTML = "This new text is added when you click the button..."
-}
+/*function moreInfo () {
+    const newText = document.querySelector('div#mainArticles')
+    newText.createElement('p')
+    newText.innerHTML = "This new text is added when you click the button..."
+    newParagraph.appendChild(newText)
+}*/
 
 
 /*
@@ -64,11 +72,16 @@ Task 5
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
 let links = document.querySelector('a#largerLinksBtn')
-links.addEventListener('click', chgLinks)
+links.addEventListener('click', () => {
+    const changeLinks = Array.from(document.querySelectorAll('a'))
+    changeLinks.forEach(function (element) {
+        element.style.fontSize = "larger"
+    })
+})
 
-function chgLinks () {
+/*function chgLinks () {
     document.querySelectorAll('div.articles > a, article.article > a').style.fontSize = '3em'
-}
+}*/
 
 
 
@@ -82,11 +95,14 @@ Also clear the text inside the input field
 */
 
 let addLearnMore = document.querySelector('#addArticleBtn')
-addLearnMore.addEventListener('click', moreInfo)
-
-function moreInfo () {
-    document.querySelector('div#mainArticles').createElement('p')
-}
+addLearnMore.addEventListener('click', () => {
+    const newParagraph = document.querySelector('div#mainArticles')
+    const textNewParagraph = document.createElement('p')
+    const addNewParagraph = document.querySelector('.form-control')
+    textNewParagraph.innerText = addNewParagraph.value 
+    newParagraph.appendChild(textNewParagraph)
+    addNewParagraph.value = ''
+})
 
 
 /*
@@ -99,10 +115,10 @@ The next color when you are in the last color of the array will be the first col
 */
 
 const colours = ['purple', 'red', 'green', 'yellow', 'black']
+const body = document.querySelector('body')
 
-let chgVColours = document.querySelector('a#bgrChangeBtn')
-chgVColours.addEventListener('click', coloursForClick)
-
-function coloursForClick () {
-    
-}
+changeBkgColor.addEventListener('click', () => {
+    for(i = 0; i < colours.length; i++) {
+        body.style.backgroundColor = colours[i]
+    }
+})
